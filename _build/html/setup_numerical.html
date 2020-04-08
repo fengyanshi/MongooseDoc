@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Numerical Parameters &#8212; Mongoose  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fluid Parameters" href="setup_fluid.html" />
+    <link rel="prev" title="MODEL SETUP" href="setup.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="numerical-parameters">
+<h1>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$numparam</span>
+<span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mo">05</span><span class="p">,</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>          <span class="o">=</span> <span class="n">delt</span><span class="p">,</span><span class="n">twfin</span><span class="p">,</span><span class="n">prtdt</span><span class="p">,</span><span class="n">sfdt</span><span class="p">,</span><span class="n">utot</span>
+<span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>   <span class="o">=</span> <span class="n">kl</span><span class="p">,</span><span class="n">kr</span><span class="p">,</span><span class="n">kt</span><span class="p">,</span><span class="n">kb</span>
+<span class="vg">$end</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DELT: (<span class="math notranslate nohighlight">\(&gt;\)</span> 0.0, <span class="math notranslate nohighlight">\(\sim\)</span> 0.005) Initial time step of calculation. Once the calculation begins, DELT can change from its initial value if the automatic time step adjustment flag AUTOT <span class="math notranslate nohighlight">\(\ne 0\)</span>.</p></li>
+<li><p>TWFIN (&gt;0.0) Final simulation time.</p></li>
+<li><p>PRTDT: (&gt;0.0) Time step for data writing. If PRTDT &gt; TWFIN, data will not be written.</p></li>
+<li><p>AUTOT (set to 1.0) Automatic time step adjustment during the simulation (AUTOT <span class="math notranslate nohighlight">\(ne\)</span> 0). If AUTOT is equal to 0, the time step is DELT.</p></li>
+<li><p>KL, KR, KT, KB Boundary condition flag for the left, right, top and bottom boundaries (L, R, T and B), respectively.</p>
+<ol class="arabic simple">
+<li><p>Rigid Free-Slip</p></li>
+<li><p>Rigid No-Slip</p></li>
+<li><p>Continuative Outflow (open)</p></li>
+<li><p>Periodic</p></li>
+<li><p>Applied Pressure</p></li>
+<li><p>Specified Inflow/Outflow</p></li>
+</ol>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Numerical Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_fluid.html">Fluid Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_obstacle.html">Obstacles–Complete Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_obs_simple.html">Obstacles–Simple Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_surface.html">Initial Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_wavemaker.html">Wavemaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
+      <li>Previous: <a href="setup.html" title="previous chapter"><strong>MODEL SETUP</strong></a></li>
+      <li>Next: <a href="setup_fluid.html" title="next chapter">Fluid Parameters</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/setup_numerical.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

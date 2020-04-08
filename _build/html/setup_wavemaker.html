@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wavemaker &#8212; Mongoose  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Output" href="setup_output.html" />
+    <link rel="prev" title="Initial Surface" href="setup_surface.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wavemaker">
+<h1>Wavemaker<a class="headerlink" href="#wavemaker" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are more than 10 wavemakers implemented in the model. Here, we introduce two types of wavemakers which are the most useful in coastal/ocean engineering applications.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Left boundary wavemaker</strong></p></li>
+</ul>
+<img alt="_images/left_wavemaker.png" src="_images/left_wavemaker.png" />
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$wave parameter$
+0.5,10.0,10.0,4      =ht,dep,depr,wavemk(4:Stokes,24:cnoidal,34:linear)
+8 1                   =T,areturn
+$end
+</pre></div>
+</div>
+<p>Definitions</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>ht: wave height</p></li>
+<li><p>dep: inflow water depth (depth at wavemaker)</p></li>
+<li><p>depr: outflow water depth (set depr=dep for regular applications)</p></li>
+<li><p>wavemk: wavemaker types. The most useful types: 4:Stokes,24:cnoidal,34:linear</p></li>
+<li><p>T: wave period</p></li>
+<li><p>areturn: 1 for including the return flow induced by Stokes drift</p></li>
+</ol>
+<blockquote>
+<div><p>Waves are generated at the left boundary (except when wavemk=100, or when another type of condition, different to wave generation, is specified). In that case, the boundary has to be defined as <strong>KL=6</strong> (see section of Numerical Parameters).</p>
+</div></blockquote>
+</div></blockquote>
+<ul>
+<li><p><strong>Internal wavemaker</strong></p>
+<p>The internal wavemaker generates a system of waves that propagates in two directions. The top limit of the source function has to remain under the wave trough, and its vertical dimension has to be about half the depth. The source function has to be placed at a distance of ∼L/2 from the left boundary and at a distance of ∼h/3 from the bottom boundary. Its width has to be &lt;4 cells or ∼L/20, its height is recommended to be around h/4</p>
+</li>
+</ul>
+<img alt="_images/inter_wave_maker.png" class="align-right" src="_images/inter_wave_maker.png" />
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$wave parameter$
+0.128,0.4,0.4,100   &lt;==aa,h0,h0r,wavemk(100:internal)
+147,156,37,68,44,1 &lt;== isourceS,isourceE,jsourceS,jourceE,
+                        type(44:irregular),areturn
+$end
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_numerical.html">Numerical Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_fluid.html">Fluid Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_obstacle.html">Obstacles–Complete Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_obs_simple.html">Obstacles–Simple Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_surface.html">Initial Surface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Wavemaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
+      <li>Previous: <a href="setup_surface.html" title="previous chapter">Initial Surface</a></li>
+      <li>Next: <a href="setup_output.html" title="next chapter">Output</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/setup_wavemaker.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
