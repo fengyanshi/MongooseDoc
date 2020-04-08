@@ -33,13 +33,32 @@
             
   <div class="section" id="output">
 <h1>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$other</span> <span class="n">parameters</span>
-<span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mo">00001</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span>  <span class="o">=</span><span class="n">kemode</span><span class="p">,</span><span class="n">roughness</span><span class="p">,</span>
-                         <span class="n">nopen</span><span class="p">,</span><span class="n">npollutant</span><span class="p">,</span><span class="n">nrs</span><span class="p">,</span>
-                         <span class="n">novertop</span><span class="p">,</span><span class="n">nfree</span><span class="p">,</span><span class="n">islip</span>
-<span class="vg">$end</span>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$output format$
+1,0,0        =lout,nanimation,nmean
+6,23.45,45.40,52.73,60.04,70.99,81.97,0,6000,0.1
+$end
 </pre></div>
 </div>
+<p>An output file is a 2D array with a dimenasion of (imax, jmax). The format is</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$output format$
+do j=1,jmax
+ write(outputIO,299) (OutputVariable(ij),ij=(j-1)*imax+1,(j-1)*imax+imax)
+end do
+299     format(3x,3000e14.6)
+$end
+</pre></div>
+</div>
+<p>There are a list of output variables, includeing the fluid function f, velocity (u,v), pressure p, turbulence production rate and turbulent kinetic energy k. The file names list as:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>fluid function: data_f.xxxx</p></li>
+<li><p>velocity u: data_u.xxxx</p></li>
+<li><p>velocity v: data_v.xxxx</p></li>
+<li><p>pressure: data_p.xxxx</p></li>
+<li><p>turbulence production rate: data_prod.xxxx</p></li>
+<li><p>turbulent kinetic energy: data_k.xxxx</p></li>
+</ol>
+</div></blockquote>
 </div>
 
 
