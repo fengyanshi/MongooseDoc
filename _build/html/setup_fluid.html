@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Fluid Parameters &#8212; Mongoose  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,8 +17,6 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mesh Generation" href="setup_mesh.html" />
-    <link rel="prev" title="Numerical Parameters" href="setup_numerical.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -29,32 +29,35 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="fluid-parameters">
 <h1>Fluid Parameters<a class="headerlink" href="#fluid-parameters" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$fldparam</span>
-<span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="n">e</span><span class="o">-</span><span class="mo">06</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="o">.</span><span class="mi">8</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="o">.</span>  <span class="o">=</span> <span class="n">xnu</span><span class="p">,</span><span class="n">gx</span><span class="p">,</span><span class="n">gy</span><span class="p">,</span><span class="n">ui</span><span class="p">,</span><span class="n">vi</span><span class="p">,</span><span class="n">rhof</span>
-<span class="vg">$end</span>
+<div class="code ruby highlight-default notranslate"><div class="highlight"><pre><span></span>$fldparam
+1.0e-06,-0.0,-9.8,0.,0.0,1000.  = xnu,gx,gy,ui,vi,rhof
+$end
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>XNU:(&gt;0.0, ∼1.0e-06) Fluid kinematic viscosity.</p></li>
-<li><p>GX: (∼0.0) Gravity acceleration in the positive x direction.</p></li>
-<li><p>GY: (∼ -9.81) Gravity acceleration in the positive y (z) direction.</p></li>
-<li><p>UI: (∼0.0) Initial fluid velocity in the positive x  direction.</p></li>
-<li><p>VI: (∼0.0) Initial fluid velocity in the positive y  direction</p></li>
-<li><p>RHOF: (&gt;0.0, ∼1.0) Fluid density in the F = 1.0 regions. RHOF is a relative value, 1.0 value can be used for fresh water. Pressure and forces results will be scaled according to RHOF.</p></li>
+<li>XNU:(&gt;0.0, ∼1.0e-06) Fluid kinematic viscosity.</li>
+<li>GX: (∼0.0) Gravity acceleration in the positive x direction.</li>
+<li>GY: (∼ -9.81) Gravity acceleration in the positive y (z) direction.</li>
+<li>UI: (∼0.0) Initial fluid velocity in the positive x  direction.</li>
+<li>VI: (∼0.0) Initial fluid velocity in the positive y  direction</li>
+<li>RHOF: (&gt;0.0, ∼1.0) Fluid density in the F = 1.0 regions. RHOF is a relative value, 1.0 value can be used for fresh water. Pressure and forces results will be scaled according to RHOF.</li>
 </ul>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+<h1 class="logo"><a href="contents.html">Mongoose</a></h1>
 
 
 
@@ -64,47 +67,34 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup_numerical.html">Numerical Parameters</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Fluid Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_obstacle.html">Obstacles–Complete Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_obs_simple.html">Obstacles–Simple Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_surface.html">Initial Surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_wavemaker.html">Wavemaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
-      <li>Previous: <a href="setup_numerical.html" title="previous chapter">Numerical Parameters</a></li>
-      <li>Next: <a href="setup_mesh.html" title="next chapter">Mesh Generation</a></li>
-  </ul></li>
+  <li><a href="contents.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -113,8 +103,8 @@
       &copy;2020, Fengyan Shi.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/setup_fluid.rst.txt"

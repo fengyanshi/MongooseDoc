@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Initial Surface &#8212; Mongoose  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,8 +17,6 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Wavemaker" href="setup_wavemaker.html" />
-    <link rel="prev" title="Porous Structure" href="setup_porous.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -29,51 +29,54 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="initial-surface">
 <h1>Initial Surface<a class="headerlink" href="#initial-surface" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you are working on surface wave modeling, you don’t need to look at the details. Just replace the <strong>SURFACE</strong> with the value of surface elevation (usually initial surface elevation) in the following code.  For comprehensive free surface setup,  you can refer to obstacles configuration.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">If you are working on surface wave modeling, you don’t need to look at the details. Just replace the <strong>SURFACE</strong> with the value of surface elevation (usually initial surface elevation) in the following code.  For comprehensive free surface setup,  you can refer to obstacles configuration.</p>
 </div>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$freesurf</span>
-<span class="mi">1</span>                     <span class="o">=</span><span class="n">nfrsrf</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>                <span class="o">=</span><span class="n">fa2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fa1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>               <span class="o">=</span><span class="n">fb2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fb1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="no">SURFACE</span><span class="p">,</span><span class="mi">1</span>              <span class="o">=</span><span class="n">fc2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fc1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">ifh</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">fd2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fd1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">fe2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fe1</span><span class="p">(</span><span class="n">nfrdrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">nxf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">mxf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">nyf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">myf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="no">SURFACE</span>                   <span class="o">=</span><span class="n">flht</span>
-<span class="vg">$end</span>
+<div class="code ruby highlight-default notranslate"><div class="highlight"><pre><span></span>$freesurf
+1                     =nfrsrf
+0.,0.0                =fa2(nfrsrf),fa1(nfrsrf)
+0.,-1.0               =fb2(nfrsrf),fb1(nfrsrf)
+0.,SURFACE,1              =fc2(nfrsrf),fc1(nfrsrf),ifh(nfrsrf)
+0.,0.                 =fd2(nfrsrf),fd1(nfrsrf)
+0.,0.                 =fe2(nfrsrf),fe1(nfrdrf)
+0.,0.                 =nxf(nfrsrf),mxf(nfrsrf)
+0.,0.                 =nyf(nfrsrf),myf(nfrsrf)
+SURFACE                   =flht
+$end
 </pre></div>
 </div>
 <img alt="_images/surface_setup.png" src="_images/surface_setup.png" />
 <p>For this case</p>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$freesurf</span>
-<span class="mi">1</span>                     <span class="o">=</span><span class="n">nfrsrf</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>                <span class="o">=</span><span class="n">fa2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fa1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>               <span class="o">=</span><span class="n">fb2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fb1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">1</span>              <span class="o">=</span><span class="n">fc2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fc1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">ifh</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">fd2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fd1</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">fe2</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">fe1</span><span class="p">(</span><span class="n">nfrdrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">nxf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">mxf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span>                 <span class="o">=</span><span class="n">nyf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">),</span><span class="n">myf</span><span class="p">(</span><span class="n">nfrsrf</span><span class="p">)</span>
-<span class="mi">40</span>                   <span class="o">=</span><span class="n">flht</span>
-<span class="vg">$end</span>
+<div class="code ruby highlight-default notranslate"><div class="highlight"><pre><span></span>$freesurf
+1                     =nfrsrf
+0.,0.0                =fa2(nfrsrf),fa1(nfrsrf)
+0.,-1.0               =fb2(nfrsrf),fb1(nfrsrf)
+0.,40,1              =fc2(nfrsrf),fc1(nfrsrf),ifh(nfrsrf)
+0.,0.                 =fd2(nfrsrf),fd1(nfrsrf)
+0.,0.                 =fe2(nfrsrf),fe1(nfrdrf)
+0.,0.                 =nxf(nfrsrf),mxf(nfrsrf)
+0.,0.                 =nyf(nfrsrf),myf(nfrsrf)
+40                   =flht
+$end
 </pre></div>
 </div>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+<h1 class="logo"><a href="contents.html">Mongoose</a></h1>
 
 
 
@@ -83,47 +86,34 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup_numerical.html">Numerical Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_fluid.html">Fluid Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_obstacle.html">Obstacles–Complete Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_obs_simple.html">Obstacles–Simple Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Initial Surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_wavemaker.html">Wavemaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
-      <li>Previous: <a href="setup_porous.html" title="previous chapter">Porous Structure</a></li>
-      <li>Next: <a href="setup_wavemaker.html" title="next chapter">Wavemaker</a></li>
-  </ul></li>
+  <li><a href="contents.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -132,8 +122,8 @@
       &copy;2020, Fengyan Shi.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/setup_surface.rst.txt"

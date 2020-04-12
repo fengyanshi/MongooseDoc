@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Obstacles–Complete Definition &#8212; Mongoose  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,8 +17,6 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Obstacles–Simple Definition" href="setup_obs_simple.html" />
-    <link rel="prev" title="Mesh Generation" href="setup_mesh.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -29,6 +29,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="obstacles-complete-definition">
@@ -39,73 +41,74 @@
 <p>The cells that satisfy the conditions f(x,y )&lt; 0 (for any (x,y) within the cell) respond to the condition of the IOH flag associated with each function, being totally opened or closed to the flow. Hence, each obstacle is defined by a group of conic functions with their associated indicator flag.</p>
 <p>The obstacles generation follows the order in which the functions are defined. Adjacent obstacles should be superposed to guarantee that all the frontier cells are included. Even if no obstacles are defined, the whole 5 lines have to be filled.</p>
 <p>An example of obstacle configration:</p>
-<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$obstcl</span>
-<span class="mi">4</span>    <span class="o">=</span> <span class="n">nobstype</span>
-<span class="mi">3</span>    <span class="o">=</span> <span class="n">nobs</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mo">00</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">750</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">700</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">3</span>    <span class="o">=</span> <span class="n">nobs</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mo">00</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">600</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">550</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">3</span>    <span class="o">=</span> <span class="n">nobs</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mo">00</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">450</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">400</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">3</span>    <span class="o">=</span> <span class="n">nobs</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mo">00</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">300</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">250</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>    <span class="o">=</span> <span class="n">oa2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oa1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ob1</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>       <span class="o">=</span> <span class="n">oc2</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">oc1</span><span class="p">(</span><span class="n">nobs</span><span class="p">),</span><span class="n">ioh</span><span class="p">(</span><span class="n">nobs</span><span class="p">)</span>
-<span class="vg">$end</span>
+<div class="code ruby highlight-default notranslate"><div class="highlight"><pre><span></span>$obstcl
+4    = nobstype
+3    = nobs
+0.0 1.00 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-750.0,1       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 1.0 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-700.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 0.0 0.0 1.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-9.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+3    = nobs
+0.0 1.00 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-600.0,1       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 1.0 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-550.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 0.0 0.0 1.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-9.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+3    = nobs
+0.0 1.00 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-450.0,1       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 1.0 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-400.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 0.0 0.0 1.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-9.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+3    = nobs
+0.0 1.00 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-300.0,1       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 1.0 0.0 0.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-250.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+0.0 0.0 0.0 1.0    = oa2(nobs),oa1(nobs),ob2(nobs),ob1(nobs)
+0.0,-9.0,0       = oc2(nobs),oc1(nobs),ioh(nobs)
+$end
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>NOBS</p></li>
-<li><p>NOBS (≥ 0) Number of obstacles interior to the computational mesh.</p></li>
-<li><p>NC(NOBS)</p></li>
-<li><p>NC: Number of conic functions used to define each obstacle. NC is an array with NOBS data.</p></li>
-<li><p>OA2(NOBS), OA1(NOBS), OB2(NOBS), OB1(NOBS)</p></li>
-<li><p>OA2(n) Coefficient of the <span class="math notranslate nohighlight">\(x^2\)</span> term in obstacle function n.</p></li>
-<li><p>OA1(n) Coefficient of the x term in obstacle function n.</p></li>
-<li><p>OB2(n) Coefficient of the <span class="math notranslate nohighlight">\(y^2\)</span> term in obstacle function n..</p></li>
-<li><p>OB1(n) Coefficient of the y term in obstacle function n.</p></li>
-<li><p>OC2(NOBS), OC1(NOBS), IOH(NOBS)</p></li>
-<li><p>OC2(n) Coefficient of the xy term in obstacle function n.</p></li>
-<li><p>OC1(n) Constant term in obstacle function n.</p></li>
-<li><p>IOH(n) Interior obstacle indicator flag on cells satisfying f(x,y)&lt;0 (for any (x,y) within the cell) for obstacle function n : ≠0 adds obstacle =0 eliminates obstacle</p></li>
-<li><p>OD2(n), OD1(n), OE2(n), OE1(n)</p></li>
-<li><p>OD2(n) Amplitude of the x-direction sine term in obstacle function n.</p></li>
-<li><p>OD1(n) Amplitude of the x-direction cosine term in obstacle function n.</p></li>
-<li><p>OE2(n) Amplitude of the y-direction sine term in obstacle function n.</p></li>
-<li><p>OE1(n) Amplitude of the y-direction cosine term in obstacle function n.</p></li>
-<li><p>NXO(n), MXO(n), NYO(n), MYO(n)</p></li>
-<li><p>NXO(n) (Real number) Mesh wavenumber coefficient in the x-direction (kxm), for the x- direction cosine term in obstacle function n.</p></li>
-<li><p>MXO(n) (Real number) Mesh wavenumber coefficient in the x-direction (kxm), for the x-direction sine term in obstacle function n.</p></li>
-<li><p>NYO(n)  (Real number) Mesh wavenumber coefficient in the y-direction (kym), for the y-direction cosine term in obstacle function n.</p></li>
-<li><p>MYO(n)  (Real number) Mesh wavenumber coefficient in the y-direction (kym), for the y-direction sine term in obstacle function n.</p></li>
+<li>NOBS</li>
+<li>NOBS (≥ 0) Number of obstacles interior to the computational mesh.</li>
+<li>NC(NOBS)</li>
+<li>NC: Number of conic functions used to define each obstacle. NC is an array with NOBS data.</li>
+<li>OA2(NOBS), OA1(NOBS), OB2(NOBS), OB1(NOBS)</li>
+<li>OA2(n) Coefficient of the <span class="math notranslate nohighlight">\(x^2\)</span> term in obstacle function n.</li>
+<li>OA1(n) Coefficient of the x term in obstacle function n.</li>
+<li>OB2(n) Coefficient of the <span class="math notranslate nohighlight">\(y^2\)</span> term in obstacle function n..</li>
+<li>OB1(n) Coefficient of the y term in obstacle function n.</li>
+<li>OC2(NOBS), OC1(NOBS), IOH(NOBS)</li>
+<li>OC2(n) Coefficient of the xy term in obstacle function n.</li>
+<li>OC1(n) Constant term in obstacle function n.</li>
+<li>IOH(n) Interior obstacle indicator flag on cells satisfying f(x,y)&lt;0 (for any (x,y) within the cell) for obstacle function n : ≠0 adds obstacle =0 eliminates obstacle</li>
+<li>OD2(n), OD1(n), OE2(n), OE1(n)</li>
+<li>OD2(n) Amplitude of the x-direction sine term in obstacle function n.</li>
+<li>OD1(n) Amplitude of the x-direction cosine term in obstacle function n.</li>
+<li>OE2(n) Amplitude of the y-direction sine term in obstacle function n.</li>
+<li>OE1(n) Amplitude of the y-direction cosine term in obstacle function n.</li>
+<li>NXO(n), MXO(n), NYO(n), MYO(n)</li>
+<li>NXO(n) (Real number) Mesh wavenumber coefficient in the x-direction (kxm), for the x- direction cosine term in obstacle function n.</li>
+<li>MXO(n) (Real number) Mesh wavenumber coefficient in the x-direction (kxm), for the x-direction sine term in obstacle function n.</li>
+<li>NYO(n)  (Real number) Mesh wavenumber coefficient in the y-direction (kym), for the y-direction cosine term in obstacle function n.</li>
+<li>MYO(n)  (Real number) Mesh wavenumber coefficient in the y-direction (kym), for the y-direction sine term in obstacle function n.</li>
 </ul>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+<h1 class="logo"><a href="contents.html">Mongoose</a></h1>
 
 
 
@@ -115,47 +118,34 @@
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup_numerical.html">Numerical Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_fluid.html">Fluid Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Obstacles–Complete Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_obs_simple.html">Obstacles–Simple Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_surface.html">Initial Surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_wavemaker.html">Wavemaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
-      <li>Previous: <a href="setup_mesh.html" title="previous chapter">Mesh Generation</a></li>
-      <li>Next: <a href="setup_obs_simple.html" title="next chapter">Obstacles–Simple Definition</a></li>
-  </ul></li>
+  <li><a href="contents.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -164,8 +154,8 @@
       &copy;2020, Fengyan Shi.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/setup_obstacle.rst.txt"
