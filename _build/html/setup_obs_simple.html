@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Obstacles–Simple Definition &#8212; Mongoose  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Procedure" href="setup_obs_simple_proc.html" />
+    <link rel="prev" title="Obstacles–Complete Definition" href="setup_obstacle.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="obstacles-simple-definition">
+<h1>Obstacles–Simple Definition<a class="headerlink" href="#obstacles-simple-definition" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simple implementation using linear functions</p>
+</div>
+<a class="reference internal image-reference" href="_images/simple_comp_1.png"><img alt="_images/simple_comp_1.png" class="align-right" src="_images/simple_comp_1.png" style="width: 400px; height: 250px;" /></a>
+<p>The idea of the simple implementation is to combine multiple polygons to form a structure. The polygons can overlap each other. The priority is given to the polygons specified in later definitions. For example, if you make a subtraction earlier, then specify an addition which covers the subtracted area, the final structure will take the overlapped addition rather than subtraction.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="setup_obs_simple_proc.html">Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_obs_simple_lara.html">Example: Lara et al. experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_obs_simple_garv.html">Example: Garveston type breakwater</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Mongoose</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>INTRODUCTION</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="compile.html"><strong>PREPARATION AND COMPILING CODE</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="setup.html"><strong>MODEL SETUP</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_numerical.html">Numerical Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_fluid.html">Fluid Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_mesh.html">Mesh Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_obstacle.html">Obstacles–Complete Definition</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Obstacles–Simple Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_porous.html">Porous Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_surface.html">Initial Surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_wavemaker.html">Wavemaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_output.html">Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_other.html">Other Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="setup.html"><strong>MODEL SETUP</strong></a><ul>
+      <li>Previous: <a href="setup_obstacle.html" title="previous chapter">Obstacles–Complete Definition</a></li>
+      <li>Next: <a href="setup_obs_simple_proc.html" title="next chapter">Procedure</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fengyan Shi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/setup_obs_simple.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
