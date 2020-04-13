@@ -1,4 +1,4 @@
-Solid Breakwater
+Irregular Waves
 **************************************
 
 * Numerical
@@ -6,11 +6,11 @@ Solid Breakwater
 .. code:: ruby
 
    $numparam
-   0.0, 0.01,150,0.5,0.05,1.0          = t_start,delt,twfin,prtdt,sfdt,utot
+   0.0,0.01,150,0.5,0.05,1.0          = t_start,delt,twfin,prtdt,sfdt,utot
    6,3,1,1   = kl,kr,kt,kb
    $end
 
-**kl = 6** for left boundary wavemaker
+**kl = 6** for internal wavemaker
 
 * Mesh
 
@@ -23,7 +23,7 @@ Solid Breakwater
    0.1           =dymn(nky)
    $end
 
-.. image:: image/examples/mesh_brk.jpg
+.. image:: image/examples/irregular_mesh.jpg
 
 * Free surface
 
@@ -41,7 +41,7 @@ Solid Breakwater
    10.0                   =flht
    $end
 
-.. image:: image/examples/domain_brk.jpg
+.. image:: image/examples/irregular_domain.jpg
 
 * Obstacle
 
@@ -63,11 +63,10 @@ Solid Breakwater
 .. code:: ruby
 
    $wave parameter$
-   1.0,10.0,10.0,4      =ht,dep,depr,wavemk(4:Stokes,5:solitary,24:cnoidal,34:linear) 
-   8 1                   =T,areturn
-   $end 
+   2.11,16.05,16.05,100      =amp,dep,depr,wavemk(100:spectral) 
+   68, 71, 20, 30, 44, 12.5  =iS,iE,jS,jE,irregular, Tmean
 
-.. image:: image/examples/eta_brk.jpg
+.. image:: image/examples/irregular_eta.jpg
 
 * Other parameters, including turbulence model
 
@@ -77,4 +76,7 @@ Solid Breakwater
    4,0.00001,1,0,0,0,1,0       =kemode,roughness,nopen,npollutant,nrs,novertop,nfree,islip
    $end
 
-.. image:: image/examples/k_brk.jpg
+.. image:: image/examples/irregular_k.jpg
+
+.. image:: image/examples/irregular_p.jpg
+

@@ -12,9 +12,9 @@ The development of MONGOOSE is based on the RIPPLE code for incompressible Navie
    :height: 250px
    :align: right
 
-The code and test cases are available at `the github site  <https://github.com/fengyanshi/MongooseDoc>`_. Test cases include wave propagation, flow through porous structures, wave interaction with a caisson breakwater, wave shoaling and breaking on a beach and wave--induced sediment transport and air bubbles are provided.
+The code and test cases are available at `the github site  <https://github.com/fengyanshi/MONGOOSE>`_. Test cases include wave propagation, flow through porous structures, wave interaction with a caisson breakwater, wave shoaling and breaking on a beach and wave--induced sediment transport and air bubbles are provided.
 
-This site serves as the ONLINE DOCUMENTATION of MONGOOSE. Detailed development and applications of the model can be found in Shi et al.(2004), Misra et al. (2006) and Shi et al. (2010).  
+This site serves as the ONLINE DOCUMENTATION of MONGOOSE. Detailed development and applications of the model can be found in Shi et al.(2004), Misra et al. (2006) and Shi et al. (2010). `AGENDA for the workshop click here <https://drive.google.com/file/d/1uvVstGPyPWIAgaGHJEDXHKs3fms7JgMy/view?usp=sharing>`_.
 
 .. toctree::
    :maxdepth: 2

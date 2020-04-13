@@ -34,12 +34,13 @@
   <div class="section" id="numerical-parameters">
 <h1>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="vg">$numparam</span>
-<span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mo">05</span><span class="p">,</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>          <span class="o">=</span> <span class="n">delt</span><span class="p">,</span><span class="n">twfin</span><span class="p">,</span><span class="n">prtdt</span><span class="p">,</span><span class="n">sfdt</span><span class="p">,</span><span class="n">utot</span>
+<span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mo">01</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mo">05</span><span class="p">,</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span>          <span class="o">=</span> <span class="n">t_start</span><span class="p">,</span><span class="n">delt</span><span class="p">,</span><span class="n">twfin</span><span class="p">,</span><span class="n">prtdt</span><span class="p">,</span><span class="n">sfdt</span><span class="p">,</span><span class="n">utot</span>
 <span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>   <span class="o">=</span> <span class="n">kl</span><span class="p">,</span><span class="n">kr</span><span class="p">,</span><span class="n">kt</span><span class="p">,</span><span class="n">kb</span>
 <span class="vg">$end</span>
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>T_START: start time (set 0.0 except for hot start)</p></li>
 <li><p>DELT: (<span class="math notranslate nohighlight">\(&gt;\)</span> 0.0, <span class="math notranslate nohighlight">\(\sim\)</span> 0.005) Initial time step of calculation. Once the calculation begins, DELT can change from its initial value if the automatic time step adjustment flag AUTOT <span class="math notranslate nohighlight">\(\ne 0\)</span>.</p></li>
 <li><p>TWFIN (&gt;0.0) Final simulation time.</p></li>
 <li><p>PRTDT: (&gt;0.0) Time step for data writing. If PRTDT &gt; TWFIN, data will not be written.</p></li>
