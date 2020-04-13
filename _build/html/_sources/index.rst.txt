@@ -24,6 +24,7 @@ This site serves as the ONLINE DOCUMENTATION of MONGOOSE. Detailed development a
    compile
    setup
    post
+   examples
 
 Indices and tables
 ==================

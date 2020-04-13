@@ -36,9 +36,23 @@
 <div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$output format$
 1,0,0        =lout,nanimation,nmean
 6,23.45,45.40,52.73,60.04,70.99,81.97,0,6000,0.1
+               =&gt; nloc,x(nloc),t_start,t_end,t_intv
 $end
 </pre></div>
 </div>
+<p>Definitions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>lout: gauge switch, 1 for TRUE. If TRUE, the program will read gauge locations specified in the next line</p></li>
+<li><p>nloc: number of gauge locations, if not zero, to record column (vertical distribution) of f,u,v,p,turbulent velocity, turbulent dissipation, and turbulent production.</p></li>
+<li><p>x(nloc): x coordinates of gauge locations</p></li>
+<li><p>t_start: start time of recording</p></li>
+<li><p>t_end: end time of recording</p></li>
+<li><p>t_intv: time interval of recording</p></li>
+<li><p>nanimation: animation switch, no longer use it, set to 0</p></li>
+<li><p>nmean: mean flow switch, 1 for recording energy flux, dissipation, internal energy, and mean free surface</p></li>
+</ul>
+</div></blockquote>
 <p>An output file is a 2D array with a dimenasion of (imax, jmax). The format is</p>
 <div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span>$output format$
 do j=1,jmax
@@ -95,6 +109,7 @@ $end
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="post.html"><strong>POSTPROCESSING</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html"><strong>EXAMPLES</strong></a></li>
 </ul>
 
 <div class="relations">
