@@ -1,7 +1,7 @@
 Example: Garveston type breakwater
 *************************************
 
-..note:: Simple implementation using the four linear functions
+.. note:: Simple implementation using the four linear functions
 
 .. image:: image/garveston_1.png
    :align: right
